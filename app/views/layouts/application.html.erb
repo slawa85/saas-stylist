@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= app_title %></title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body class="page-template-concierge">
+  <!-- fallback layout-->
+  <div id="content">
+    <div class="navbar navbar-fixed-top ">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <div id="logo">
+            <a href="http://openproject.org/" title="OpenProject" rel="homepage">
+              <img src="<%= asset_path('logo1.png') %>" alt="OpenProject"/>
+            </a>
+          </div><!-- end of #logo -->
+        </div>
+      </div>
+    </div>
+
+    <div id="wrapper" class="clearfix concierge">
+      <section id="section1" class="concierge-header">
+        <div class="vertical-center-prepare">
+          <div class="vertical-center-holder" id="op-sass-content">
+            <div class="container">
+              <div style="margin: 0 auto; float: none;" class="span8">
+                <% flash.each do |name, msg| %>
+                    <div class="flash_<%= name %> alert alert-block alert-<%= name %>">
+                      <button class="close" data-dismiss="alert" type="button">×</button>
+                      <%= msg %>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+            <%= yield %>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="textwidget pull-right">&copy; <%= Time.now.year %> - OpenProject. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>

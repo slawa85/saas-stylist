@@ -1,0 +1,217 @@
+/** Fallback layout styles **/
+
+/* Content */
+html, body, #content {
+    height: 100%;
+}
+body {
+    background: url(<%= asset_path('concierge-background.jpg') %>) 50% 0 fixed repeat;
+}
+.page-template-concierge .footer .container {
+    margin-top: 0;
+}
+.concierge-header {
+    min-height: 940px;
+    vertical-align: text-bottom;
+    height:100%;
+}
+.vertical-center-prepare {
+    display: table;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    height: 940px;
+}
+.vertical-center-holder {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* Navbar */
+#logo img {
+    width: 177px;
+}
+.navbar {
+    font-family: "Open Sans", sans-serif;
+}
+.navbar img {
+    border: 0;
+}
+.navbar .nav {
+    float: right;
+    margin: 0;
+}
+.navbar .nav .dropdown-toggle,
+.navbar .nav .dropdown-menu {
+    display: none;
+}
+.navbar .nav > li.active a {
+    font: 600 16px/72px "Open Source", sans-serif;
+}
+.navbar .nav > li > a {
+    color: white;
+    text-shadow: none;
+    font: 16px/72px "Open Source", sans-serif;
+    font-weight: normal;
+    margin: 0 42px 0 0;
+    padding: 0;
+}
+.navbar .nav > li > a:active, .navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
+    color: white;
+    text-decoration: none;
+}
+.navbar .navbar-inner {
+    background: rgba(0, 0, 0, 0.15);
+    height: 80px;
+    border: 0;
+    box-shadow: none;
+}
+.navbar .navbar-inner .container {
+    width: 52.8%;
+    margin: 0 auto;
+}
+.navbar .navbar-inner .brand {
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+    background: <%= asset_path('logo1') %>;
+    width: 177px;
+    height: 80px;
+}
+
+/** form styles **/
+#op-sass-content .form-holder
+{
+    display: inline-block;
+    width: 620px;
+    background-color: white;
+    text-align: left;
+    padding: 35px 35px 15px 35px;
+
+    -webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.75);
+}
+#op-sass-content .form-holder h1
+{
+    border-bottom: 1px solid #DDD;
+    font-size: 20px;
+    padding-bottom: .2em;
+    font-weight: 600;
+    margin-top: 0;
+}
+#op-sass-content .form-holder .small-text {
+    font-size: .6em;
+    font-weight: normal;
+}
+#op-sass-content .form-holder .form-horizontal
+{
+    padding-top: 40px;
+}
+#op-sass-content .form-holder .control-label
+{
+    text-align: left;
+    font-weight: normal;
+    font-size: 1.2em;
+    line-height: 42px;
+}
+#op-sass-content .form-holder .controls input[type="text"],
+#op-sass-content .form-holder .controls input[type="email"],
+#op-sass-content .form-holder .controls input[type="password"]
+{
+    width: 95%;
+    height: 40px;
+    border-radius: 0;
+}
+#op-sass-content .form-holder .op-sass-button
+{
+    background: #0178A2 none;
+    border-radius: 3px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: 600;
+    border: none;
+    color: white;
+}
+#op-sass-content .form-holder .horizontal-ruler-text
+{
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #DDD;
+    line-height: 0.1em;
+    margin: 40px 0 20px;
+}
+#op-sass-content .form-holder .horizontal-ruler-text span
+{
+    background: #fff;
+    padding: 0 16px;
+    font-size: 16px;
+}
+
+/** message holder **/
+#op-sass-content .message {
+    padding: 25px 30px !important;
+}
+
+#op-sass-content .message-holder {
+    display: inline-block;
+    min-height: 79px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid #218DB3;
+    margin-bottom: 1em;
+}
+
+.sass-message-centered {
+    margin-left: 35px;
+}
+
+#op-sass-content .message-holder .message
+{
+    color: #FFFEFF;
+    padding: 27px 35px 27px 55px;
+    position: relative;
+    font-size: 18px;
+    line-height: 30px;
+
+}
+#op-sass-content .message-holder .message .sass-message-icon {
+    font-size: 20px;
+    margin: 5px;
+}
+
+/** big widget holder **/
+#op-sass-content .big-widget-holder
+{
+    display: block;
+    clear: both;
+    margin-bottom: 60px;
+    color: #ffffff;
+}
+#op-sass-content .big-widget-holder .banner-text {
+    height: auto;
+}
+#op-sass-content .big-widget-holder .banner-text h1.headline-teaser
+{
+    border-right-color: white;
+}
+#op-sass-content .big-widget-holder .banner-text p {
+    font-size: 45px;
+    line-height: 2.1em;
+}
+
+/* Footer */
+.footer {
+    background: #434343;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+.footer .container {
+    margin: 18px auto 0;
+    color: #aaaaaa;
+}
+.footer .container .textwidget {
+    margin-top: 22px;
+}

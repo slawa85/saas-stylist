@@ -20,7 +20,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This gem need few settings to work properly, in you application settings.yml or
+settings.local.yml add following configurations using yaml format:
+
+    styling:
+      template_layout:
+        regular_page: https://openproject.yopeso.com/concierge
+        error_page: https://openproject.yopeso.com/error-404
+        minimum_length: 3000
+        read_options:
+          read_timeout: 8 # seconds
+          ssl_verify_mode: 0
+      regular_place_holder: <div class="vertical-center-holder" id="op-sass-content"></div>
+      error_place_holder: <div id="op-sass-content"></div>
 
 ## Contributing
 

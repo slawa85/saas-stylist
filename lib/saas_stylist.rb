@@ -17,20 +17,13 @@ module Saas::Stylist
     @configuration = Configuration.new
   end
 
-  def self.include_stylized_controller
-    require 'stylized_controller'
-  end
-
   class Configuration
-    # Store configuration needed for entire
+    # Store configuration needed for
     # application layout
-    attr_accessor :application_styling
-
-    # Store configuration required for error page layout
-    attr_accessor :error_styling
+    attr_accessor :styling
 
     def initialize
-      @error_styling = @application_styling = {}
+      @styling = {}
     end
   end
 end

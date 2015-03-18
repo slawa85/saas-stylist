@@ -45,8 +45,6 @@ module Saas
           Saas::Stylist.configuration.logger.info 'INFO -- : downloading the template from wordpress version'
           uri = @styling_config[:template_layout][:regular_page]
           read_options = @styling_config[:template_layout][:read_options]
-          require 'pry'
-          binding.pry
           open(uri, read_options.to_h).read
         end
       end

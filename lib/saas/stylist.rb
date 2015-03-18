@@ -1,6 +1,8 @@
 require 'saas/stylist/engine'
 require 'saas/stylist/version'
+require 'open-uri'
 
+# Render views within wordpress template
 module Saas
   module Stylist
     module FancyRenderer
@@ -15,12 +17,12 @@ module Saas
         processed_template = process_template(template, rendered)
         super inline: processed_template
       rescue TemplateException, OpenURI::HTTPError, Timeout::Error => e
-        logger.error "Rendering into wordpress template failed with the error: #{e.message}"
-        (options || extra_options).merge!(layout: 'stylist/application')
+        Saas::Stylist.configuration.logger.error "Rendering into wordpress template failed with the error: #{e.message}"
+        extra_options.merge!(layout: 'stylist/application')
         super
       rescue => e # handle all other possible exceptions
-        logger.error "Unexpected exception during the rendering into wordpress template: #{e.message}"
-        (options || extra_options).merge!(layout: 'stylist/application')
+        Saas::Stylist.configuration.logger.error "Unexpected exception during the rendering into wordpress template: #{e.message}"
+        extra_options.merge!(layout: 'stylist/application')
         super
       end
 
@@ -40,10 +42,11 @@ module Saas
 
       def download_template
         cache('openproject_template') do
-          logger.info 'INFO -- : downloading the template from wordpress version'
-
+          Saas::Stylist.configuration.logger.info 'INFO -- : downloading the template from wordpress version'
           uri = @styling_config[:template_layout][:regular_page]
           read_options = @styling_config[:template_layout][:read_options]
+          require 'pry'
+          binding.pry
           open(uri, read_options.to_h).read
         end
       end

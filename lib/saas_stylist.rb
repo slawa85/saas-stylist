@@ -1,4 +1,4 @@
-require 'saas/stylist' if defined?(Rails)
+require 'saas/stylist'
 
 module Saas::Stylist
   class << self
@@ -18,12 +18,17 @@ module Saas::Stylist
   end
 
   class Configuration
-    # Store configuration needed for
     # application layout
     attr_accessor :styling
 
+    # application logger
+    attr_accessor :logger
+
+    # application title
+    attr_accessor :app_title
+
     def initialize
-      @styling = {}
+      @styling = @logger = @app_title = {}
     end
   end
 end

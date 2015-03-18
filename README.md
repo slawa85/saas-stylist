@@ -26,13 +26,24 @@ settings.local.yml add following configurations using yaml format:
     styling:
       template_layout:
         regular_page: https://openproject.yopeso.com/concierge
-        error_page: https://openproject.yopeso.com/error-404
         minimum_length: 3000
         read_options:
           read_timeout: 8 # seconds
           ssl_verify_mode: 0
       regular_place_holder: <div class="vertical-center-holder" id="op-sass-content"></div>
-      error_place_holder: <div id="op-sass-content"></div>
+
+Once you added the configuration in settings file you should create an initializer in config/initializers
+directory, where you will specify which config should take for styling, logger and application title
+like in exemple below:
+
+    Saas::Stylist.configure do |config|
+      config.styling = Settings.styling
+      config.logger = Rails.logger || Logger.new(STDOUT)
+      config.app_title = 'Your application title'
+    end
+
+
+  
 
 ## Contributing
 
